@@ -3,43 +3,39 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-    <title>مشسشبز</title>
-    <meta name="description" content="شرریشیر" />
-
-    <meta name="theme-color" content="#090d16" />
-    <meta name="mobile-web-app-capable" content="yes" />
+    <title>Blue Logic — مدیریت مهندس امیررضا نریمانی</title>
+    <meta name="description" content="یک سیستم مدیریت شخصی هوشمند برای مهندس امیررضا نریمانی جهت مدیریت پروژه‌ها، مهارت‌ها، وظایف، یادگیری و دستیار هوشمند مهندسی." />
+    <meta property="og:title" content="Blue Logic — مدیریت مهندس امیررضا نریمانی" />
+    <meta property="og:description" content="سیستم عامل مهندسی شخصی با طراحی iOS 27 Liquid Glass و قابلیت آفلاین PWA" />
+    <meta property="og:type" content="website" />
+    
+    <!-- PWA & Apple Meta Tags -->
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="icon" type="image/svg+xml" href="icon.svg" />
+    <link rel="apple-touch-icon" href="icon.svg" />
+    <meta name="theme-color" content="#faf8ff" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <meta name="apple-mobile-web-app-title" content="Blue Logic" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="format-detection" content="telephone=no" />
 
-    <!-- ✅ مسیرهای نسبی (با ./) برای سازگاری با GitHub Pages -->
-    <link rel="icon" type="image/svg+xml" href="./icon.svg" />
-    <link rel="apple-touch-icon" href="./icon.svg" />
-    <link rel="manifest" href="./manifest.webmanifest" />
-
+    <!-- Google Fonts: Vazirmatn, Space Grotesk, Plus Jakarta Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap"
-      rel="stylesheet"
-    />
-
-    <!-- ✅ فایل‌های بیلد شده واقعی (داخل پوشه assets) -->
-    <script type="module" crossorigin src="./assets/index-DGW5CVym.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-BS7iOy2_.css" />
-
-    <!-- ✅ ثبت Service Worker برای PWA -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <script type="module" crossorigin src="/assets/index-DfoGInJB.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-BS7iOy2_.css">
+  </head>
+  <body class="bg-[#faf8ff] text-[#0f172a] select-none antialiased overflow-x-hidden">
+    <div id="root"></div>
     <script>
       if ('serviceWorker' in navigator) {
-        window.addEventListener('load', function () {
-          navigator.serviceWorker.register('./sw.js').catch(function (e) {
-            console.warn('SW registration failed:', e);
-          });
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('sw.js').catch(() => {});
         });
       }
     </script>
-  </head>
-  <body class="bg-[#090d16] text-[#dfe2ef] antialiased overflow-x-hidden">
-    <div id="root"></div>
   </body>
 </html>
+
