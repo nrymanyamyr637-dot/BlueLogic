@@ -12,8 +12,10 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="apple-mobile-web-app-title" content="Blue Logic" />
 
-    <link rel="icon" type="image/svg+xml" href="/BlueLogic/icon.svg" />
-    <link rel="apple-touch-icon" href="/BlueLogic/apple-touch-icon.png" />
+    <!-- ✅ مسیرهای نسبی (با ./) برای سازگاری با GitHub Pages -->
+    <link rel="icon" type="image/svg+xml" href="./icon.svg" />
+    <link rel="apple-touch-icon" href="./icon.svg" />
+    <link rel="manifest" href="./manifest.webmanifest" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -21,9 +23,23 @@
       href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
+
+    <!-- ✅ فایل‌های بیلد شده واقعی (داخل پوشه assets) -->
+    <script type="module" crossorigin src="./assets/index-DGW5CVym.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-BS7iOy2_.css" />
+
+    <!-- ✅ ثبت Service Worker برای PWA -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function () {
+          navigator.serviceWorker.register('./sw.js').catch(function (e) {
+            console.warn('SW registration failed:', e);
+          });
+        });
+      }
+    </script>
   </head>
   <body class="bg-[#090d16] text-[#dfe2ef] antialiased overflow-x-hidden">
     <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
