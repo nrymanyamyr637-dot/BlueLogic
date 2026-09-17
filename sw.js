@@ -1,12 +1,10 @@
 // Service Worker for Blue Logic PWA
-const CACHE_NAME = 'bluelogic-v2';
+const CACHE_NAME = 'bluelogic-v1';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',
   './manifest.webmanifest',
-  './icon.svg',
-  './assets/index-DGW5CVym.js',
-  './assets/index-BS7iOy2_.css'
+  './icon.svg'
 ];
 
 self.addEventListener('install', (event) => {
@@ -34,8 +32,7 @@ self.addEventListener('activate', (event) => {
 });
 
 self.addEventListener('fetch', (event) => {
-  if (event.request.method !== 'GET') return;
-
+  // Navigation requests
   if (event.request.mode === 'navigate') {
     event.respondWith(
       fetch(event.request).catch(() => caches.match('./index.html'))
@@ -45,7 +42,9 @@ self.addEventListener('fetch', (event) => {
 
   event.respondWith(
     caches.match(event.request).then((cachedResponse) => {
-      if (cachedResponse) return cachedResponse;
+      if (cachedResponse) {
+        return cachedResponse;
+      }
       return fetch(event.request).then((response) => {
         if (!response || response.status !== 200 || response.type !== 'basic') {
           return response;
@@ -55,7 +54,10 @@ self.addEventListener('fetch', (event) => {
           cache.put(event.request, responseToCache);
         });
         return response;
-      }).catch(() => cachedResponse);
+      }).catch(() => {
+        // Offline fallback
+        return cachedResponse;
+      });
     })
   );
 });
