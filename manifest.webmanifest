@@ -1,25 +1,26 @@
 {
-  "name": "مدیریت ",
+  "id": "bluelogic-pwa",
+  "name": "مدیریت مهندس امیررضا نریمانی",
   "short_name": "Blue Logic",
-  "description": "یذسیذ",
+  "description": "یک سیستم مدیریت شخصی هوشمند برای مهندس امیررضا نریمانی جهت مدیریت پروژه‌ها، مهارت‌ها، وظایف، یادگیری و دستیار هوشمند مهندسی.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
-  "orientation": "portrait-primary",
-  "background_color": "#090d16",
-  "theme_color": "#090d16",
+  "orientation": "portrait",
+  "background_color": "#faf8ff",
+  "theme_color": "#faf8ff",
   "lang": "fa",
   "dir": "rtl",
   "categories": ["productivity", "utilities"],
   "icons": [
     {
-      "src": "./icon.svg",
+      "src": "icon.svg",
       "sizes": "192x192 512x512",
       "type": "image/svg+xml",
       "purpose": "any"
     },
     {
-      "src": "./icon.svg",
+      "src": "icon.svg",
       "sizes": "512x512",
       "type": "image/svg+xml",
       "purpose": "maskable"
