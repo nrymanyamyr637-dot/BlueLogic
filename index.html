@@ -8,11 +8,11 @@
     <meta property="og:title" content="Blue Logic — مدیریت مهندس امیررضا نریمانی" />
     <meta property="og:description" content="سیستم عامل مهندسی شخصی با طراحی iOS 27 Liquid Glass و قابلیت آفلاین PWA" />
     <meta property="og:type" content="website" />
-    
+
     <!-- PWA & Apple Meta Tags -->
-    <link rel="manifest" href="manifest.webmanifest" />
-    <link rel="icon" type="image/svg+xml" href="icon.svg" />
-    <link rel="apple-touch-icon" href="icon.svg" />
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="icon" type="image/svg+xml" href="./icon.svg" />
+    <link rel="apple-touch-icon" href="./icon.svg" />
     <meta name="theme-color" content="#faf8ff" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
@@ -20,22 +20,23 @@
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="format-detection" content="telephone=no" />
 
-    <!-- Google Fonts: Vazirmatn, Space Grotesk, Plus Jakarta Sans -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
-    <script type="module" crossorigin src="/assets/index-CJ9y4vLn.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-D6tdIuLj.css">
+
+    <!-- ✅ اصلاح: مسیرهای نسبی با ./ -->
+    <link rel="stylesheet" crossorigin href="./assets/index-D6tdIuLj.css">
+    <script type="module" crossorigin src="./assets/index-CJ9y4vLn.js"></script>
   </head>
   <body class="bg-[#faf8ff] text-[#0f172a] select-none antialiased overflow-x-hidden">
     <div id="root"></div>
     <script>
-      if ('serviceWorker' in navigator) {
+      if ('serviceWorker' in navigator && location.protocol !== 'file:') {
         window.addEventListener('load', () => {
-          navigator.serviceWorker.register('sw.js').catch(() => {});
+          navigator.serviceWorker.register('./sw.js').catch((err) => console.warn('SW:', err));
         });
       }
     </script>
   </body>
 </html>
-
